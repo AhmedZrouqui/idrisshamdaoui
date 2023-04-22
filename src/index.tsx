@@ -1,44 +1,38 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import reportWebVitals from "./reportWebVitals";
-import Layout from "./components/Layout";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+import Layout from './components/Layout';
 import {
   createBrowserRouter,
   RouterProvider,
   useLocation,
   useOutlet,
-} from "react-router-dom";
-import Home from "./pages/Home";
-import Projects from "./pages/Projects";
-import { CSSTransition, SwitchTransition } from "react-transition-group";
-import Contact from "./pages/Contact";
+} from 'react-router-dom';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
 const routes = [
   {
-    path: "/",
+    path: '/',
     element: <Home />,
     nodeRef: React.createRef(),
   },
   {
-    path: "/projects",
+    path: '/projects',
     element: <Projects />,
     nodeRef: React.createRef(),
-  },
-  {
-    path: "/contact",
-    element: <Contact />,
-    node: React.createRef(),
   },
 ];
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
     children: routes.map((route) => ({
-      index: route.path === "/",
-      path: route.path === "/" ? undefined : route.path,
+      index: route.path === '/',
+      path: route.path === '/' ? undefined : route.path,
       element: route.element,
     })),
   },
@@ -73,7 +67,7 @@ function App() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>

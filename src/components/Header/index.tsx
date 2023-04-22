@@ -1,16 +1,16 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import { navigation } from "../../helpers";
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { navigation } from '../../helpers';
 
 function Header() {
   const path = useLocation().pathname.substring(1);
-  const isActive = "bg-lighter font-medium rounded";
+  const isActive = 'bg-lighter font-medium rounded';
 
   return (
     <div className="flex justify-between">
       <div id="logo">
         <Link to={`/`} className="font-magilio text-5xl">
-          Az.
+          Idriss.
         </Link>
       </div>
       <div id="nav" className="font-poppins">
